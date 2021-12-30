@@ -55,19 +55,23 @@
 <script type="text/javascript">
       $(document).ready(function(){
             $("button").click(function(){
+              var name = $("#name").val();
+              var email = $("#email").val();
+              var phone = $("#phone").val();
+              var message = $("#message").val();
               (function() {
                 emailjs.init("user_OxYRmOw2wOoHV3nY9F7MH");
                 })();
 
                 var templateParams = {
-                        name: 'James',
-                        message: 'Check this out!'
-                        sub: 'New message from threads & treads'
-                        to_email: 'b.parado16@gmail.com'
+                        name: name,
+                        message: message,
+                        sub: phone,
+                        to_email: email
 
                     };
                     
-                    emailjs.send('service_9pq8uas', 'template_o53y2lf', templateParams)
+                    emailjs.send('service_1izoi3s', 'template_y5cupbb', templateParams)
                         .then(function(response) {
                     console.log('SUCCESS!', response.status, response.text);
                         }, function(error) {
